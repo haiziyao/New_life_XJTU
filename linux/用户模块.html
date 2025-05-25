@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>用户模块</title></head>
+<body><pre><code class='language-shell' lang='shell'>useradd 用户名
+useradd -d /地址 用户名
+
+passwd 用户名   #修改密码
+
+userdel 用户名		#删除用户，保留home目录
+userdel -r 用户名    #全部删了
+
+id 用户名   # 查询用户信息
+whoami   #查看我是哪个user
+who am i #详细信息
+
+useradd -g 用户名  组名  #不给组名，自动创建一个与用户名相同的组
+usermod -g 组名  用户名
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#用户存储在 /etc/passwd 中
+#组名存储在 /etc/group 中
+#口令配置文件 /etc/shadow 
+</code></pre>
+<p>&nbsp;</p>
+<pre><code class='language-shell' lang='shell'>init [0123456]  #切换运行级别
+systemctl get-default #默认是graphical.target  5
+systemctl set-default mult-user.target   #也就是3
+
+</code></pre>
+<p> <img src="/imgs/2025-05-05/EOlYRovPO8cg1kFw.png" referrerpolicy="no-referrer" alt="输入图片说明"></p>
+<h2>如何找回root密码</h2>
+<ul>
+<li>重启后疯狂按 e</li>
+<li>找到linux  ········· UTF-8 </li>
+<li>在后面输入 init=/bin/sh</li>
+<li>按ctrl+x进入单用户模式</li>
+<li>输入mount -o remount,rw /</li>
+<li>按下Enter</li>
+<li>输入passwd并按下Enter</li>
+<li>可以重置密码了</li>
+<li>最后一行输入 touch /.autorelabel</li>
+<li>最后输入 exec /sbin/init </li>
+<li>按下Enter耐心等待</li>
+
+</ul>
+</body>
+</html>

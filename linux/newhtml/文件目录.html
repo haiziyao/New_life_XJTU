@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>文件目录</title></head>
+<body><pre><code class='language-shell' lang='shell'> pwd 
+ ls 
+ cd ~  #回到家目录
+ cd .. #上一级目录
+ mkdir [-p]  # 创建目录，-p表示创建多级目录
+ rmdir #删除空目录
+ rm -rf  #直接全部删了
+ touch 文件名 #创建一个空文件
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#文件拷贝
+cp 文件 地址
+#递归拷贝
+cp -r 源目录及文件  目标地址
+#默认覆盖
+\cp -r  .. ... #强制覆盖，全部y
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#rm 
+rm 文件
+rm -f #跳过确定环节，直接删除
+rm -r
+rm -rf #跳过提示，全删除了 
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#mv 重命名或移动
+mv 旧名字 新name
+mv 旧address 新address
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#cat 指令  只能查看文件不能修改
+cat 文件
+cat -n 文件 #显示行号
+cat -n more #Enter 看下一行 #空格  翻页看
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#more 
+空格 向下翻一页
+Enter 向下翻一行
+q 立刻离开more，不显示该文件内容
+Ctrl+F  向下滚动一屏
+Ctrl+B  返回上一屏
+=   输出当前行号
+:f  输出文件名和当前行号
+
+more 文件名
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#less 与more类似，只不过是动态加载
+less 文件
+空格  翻页
+pagedown键  
+pageup键
+q    退出
+/字符  向下查找 n向下  N向上
+?字符  向上查找 n向上  N向下 
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#echo
+echo $PATH
+echo $HOSTNAME
+echo &quot;文字&quot;
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#head
+head 文件 #查看前10行
+head -n 5 #查看前5行，可以自定义行号
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#tail
+tail 文件
+tail -n 5
+tail -f 文件 #实时监控文件变化
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#&gt; 和 &gt;&gt; 
+&gt; #覆盖
+&gt;&gt; #追加
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#ln  软链接,相当于快捷方式
+ln -s 源  新
+
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#history 
+history
+history 10 
+!387  #编号执行代码
+</code></pre>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>UserManage</title></head>
+<body><pre><code class='language-shell' lang='shell'>#用户必须有所在 组
+#一个文件有：所有者  所在组 其他组  
+su 用户 #切换用户
+
+chwon  用户  文件  #将文件owner改为 用户
+
+groupadd 组名
+useradd -g 组名 用户
+
+chgrp 组名  文件名
+
+usermod -g 新组名 用户名
+usermod -d 目录名字  用户名 #更改用户的初始目录，要确保用户有进入这个目录的权限
+
+ 
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#ls -l 显示的文件信息的含义  
+drwxr-xr-x. 2 root root 4096 3月  27 21:10 公共
+#第0位：确定文件类型  l 链接  d 目录  c  字符设备,鼠标键盘    b 块设备，硬盘
+#三位：该文件的所有者的权限
+#三位：用户组所有的权限
+#三位：其他用户所有的权限  
+  #作用在文件
+    #r 可以读取，查看
+    #w 可以修改但不能删除(删除文件需要有对目录可以修改的权限)
+    #x 可以被执行
+  #作用在目录
+    #r  可以ls
+    #w  可以创建+删除文件，重命名目录
+    #x  可以cd进入目
+  # 可以用数字表示  r=4 w=2 x=1 
+  
+#第二部分 一个数字 
+	#目录 表示目录下文件数
+	#文件 表示文件软连接数量  
+# 所有者
+#所在组
+#文件大小：显示文件字节数量   如果是文件夹，则显示4096
+#文件修改日期
+    
+</code></pre>
+<pre><code class='language-shell' lang='shell'>#修改权限 
+chmod u=rwx,g=rx,o=x  文件/目录
+chmod o+x 文件/目录
+chmod a-x 文件/目录  #给所有用户去掉执行的权限
+
+chmod 751 文件/目录
+
+</code></pre>
+<pre><code class='language-shell' lang='shell'>chown newowner:newgroup 文件/目录
+chown -R newowner:newgroup 目录wo
+
+chgrp -R newgroup 目录/文件
+</code></pre>
+<p>&nbsp;</p>
+</body>
+</html>

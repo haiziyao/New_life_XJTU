@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>文件压缩</title></head>
+<body><pre><code class='language-shell' lang='shell'>gzip 文件
+gunzip 文件
+
+</code></pre>
+<pre><code class='language-shell' lang='shell'>zip 文件夹或文件
+unzip  解压文件
+
+zip -r myhome.zip /home/ # 将home和其子文件夹都压缩
+</code></pre>
+<pre><code class='language-shell' lang='shell'>tar [选项] xxx.tar.gz  打包的内容
+-c   产生.tar打包文件
+-v 显示详细信息
+-f 指定压缩后的文件名
+-z 打包同时压缩
+-x 解包.tar文件
+
+tar -zcvf c.tar.gz /home/a.txt /home/b.txt
+tar -zxvf c.tar.gz -C /目标位置
+</code></pre>
+<p>&nbsp;</p>
+</body>
+</html>
